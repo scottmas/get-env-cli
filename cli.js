@@ -19,7 +19,7 @@ const cli = meow(`
 
 if (cli.flags && typeof cli.flags.assert === 'string') {
   process.exit(
-    (mapping[env] || env) === (mapping[cli.flags.assert] || cli.flags.assert)
+    (mapping[env] || env) === (mapping[cli.flags.assert] || cli.flags.assert) ? 0 : 1
   );
 } else{
   console.log(env);
